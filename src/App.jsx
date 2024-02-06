@@ -8,7 +8,7 @@ const router = createBrowserRouter([
     element: <HomeLayout/>,
     children:[
       {
-        path:'landing',
+        index: true,
         element: <Landing />,
       },
       {
@@ -21,7 +21,17 @@ const router = createBrowserRouter([
       },
       {
         path:'about',
-        element: <About/>
+        element: <About/>,
+        children: [
+          {
+            index: true,
+            element: <h2>our company</h2>,
+          },
+          {
+            path:'person',
+            element: <h2>john doe</h2>,
+          },
+        ]
       },
     ]
   },
