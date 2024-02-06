@@ -5,12 +5,27 @@ import {About, HomeLayout, Landing, Error, Newsletter, Cocktail} from './pages';
 const router = createBrowserRouter([
   {
     path:'/',
-    element: <HomeLayout/>
+    element: <HomeLayout/>,
+    children:[
+      {
+        path:'landing',
+        element: <Landing />,
+      },
+      {
+        path:'cocktail',
+        element: <Cocktail/>,
+      },
+      {
+        path:'newsletter',
+        element: <Newsletter/>,
+      },
+      {
+        path:'about',
+        element: <About/>
+      },
+    ]
   },
-  {
-    path:'/about',
-    element: <About/>
-  },
+  
 ])
 
 
