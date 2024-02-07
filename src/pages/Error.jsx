@@ -6,7 +6,8 @@ const Error = () => {
   const error = useRouteError();
   console.log(error);
   if(error.status === 404) {
-    return <Wrapper>
+    return (
+    <Wrapper>
       <div>
         <img src={img} alt="not found" />
         <h3>Ohh!</h3>
@@ -14,6 +15,7 @@ const Error = () => {
         <Link to='/'>back home</Link>
       </div>
     </Wrapper>
+    )
   }
   return (
     <Wrapper>
