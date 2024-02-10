@@ -41,19 +41,19 @@ const Cocktail = () => {
           {name}
         </p>
         <p>
-          <span className='drink-data'>name : </span>
+          <span className='drink-data'>category : </span>
           {name}
         </p>
         <p>
-          <span className='drink-data'>name : </span>
+          <span className='drink-data'>info : </span>
           {name}
         </p>
         <p>
-          <span className='drink-data'>name : </span>
+          <span className='drink-data'>glass : </span>
           {name}
         </p>
         <p>
-          <span className='drink-data'>name : </span>
+          <span className='drink-data'>instructions : </span>
           {name}
         </p>
       </div>
