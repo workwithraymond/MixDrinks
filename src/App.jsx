@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {About, HomeLayout, Landing, Error, Newsletter, Cocktail, SinglePageError} from './pages';
 import { loader as landingLoader } from './pages/Landing';
 import { loader as singleCocktailLoader } from './pages/Cocktail';
+import {action as newsletterAction} from './pages/Newsletter'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       {
         path:'newsletter',
         element: <Newsletter/>,
+        action: newsletterAction,
       },
       {
         path:'about',

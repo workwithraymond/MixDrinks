@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import axios from 'axios';
-import Cocktail from "./Cocktail";
+
 import CocktailList from "../components/CocktailList";
 
 const cocktailSearchUrl =
