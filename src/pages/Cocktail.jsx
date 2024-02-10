@@ -1,6 +1,7 @@
 import { useLoaderData, Link} from 'react-router-dom';
 import axios from 'axios';
 import Wrapper from '../assets/wrappers/CocktailPage';
+import { isInputElement } from 'react-router-dom/dist/dom';
 const singleCocktailUrl =
   'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 
@@ -24,7 +25,11 @@ const Cocktail = () => {
     strCategory:category, 
     strGlass: glass, 
     strInstructions: instructions 
-  } = singleDrink
+  } = singleDrink;
+
+  const validIngredients = Object.keys(singleDrink).filter
+  ((key) => key.startsWith('strIngredient') && singleDrink[key] !==null)
+  .map((key) => singleDrink[key]);
 
   return (
     <Wrapper>
@@ -51,6 +56,17 @@ const Cocktail = () => {
         <p>
           <span className='drink-data'>glass : </span>
           {name}
+        </p>
+        <p>
+        <span className='drink-data'>ingredients : </span>
+        {validIngredients.map((item, index) => {
+          return (
+            <span className='ing' key={isInputElement}>
+              {item}{index < validIngredients.length - 1 ? 
+             ',':'' }
+            </span>
+          )
+        })}
         </p>
         <p>
           <span className='drink-data'>instructions : </span>
