@@ -13,9 +13,51 @@ export const loader = async ({params}) => {
 }
 
 const Cocktail = () => {
-  const {id, data } = useLoaderData()
+  const {id, data } = useLoaderData();
+
+  const singleDrink = data.drinks[0];
+
+  const {
+    strDrink:name, 
+    strDrinkThumb:image, 
+    strAlcoholic:info, 
+    strCategory:category, 
+    strGlass: glass, 
+    strInstructions: instructions 
+  } = singleDrink
+
   return (
-    <h1>Cocktail</h1>
+    <Wrapper>
+      <header>
+        <Link to='/' className='btn'>
+          back home
+        </Link>
+        <h3>{name}</h3>
+      </header>
+    <img src={image} alt={name} className='img' />
+      <div className='drink-info'>
+        <p>
+          <span className='drink-data'>name : </span>
+          {name}
+        </p>
+        <p>
+          <span className='drink-data'>name : </span>
+          {name}
+        </p>
+        <p>
+          <span className='drink-data'>name : </span>
+          {name}
+        </p>
+        <p>
+          <span className='drink-data'>name : </span>
+          {name}
+        </p>
+        <p>
+          <span className='drink-data'>name : </span>
+          {name}
+        </p>
+      </div>
+    </Wrapper>
   )
 }
 export default Cocktail
